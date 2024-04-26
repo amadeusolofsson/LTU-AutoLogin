@@ -19,6 +19,7 @@ A very simple script for the lazy to click the login button when connecting to a
 // @name         LTU-AutoLogin
 // @description  Automatically fills and clicks the button to quickly log-in from the LTU weblogon site.
 // @version 1.0
+// @author sleepy
 // @match        https://weblogon.ltu.se/*
 // ==/UserScript==
 
