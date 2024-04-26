@@ -10,25 +10,27 @@ A very simple script for the lazy to click the login button when connecting to a
 
 2. Click on the Tampermonkey icon in your browser toolbar.
 
-3. Select "Create a new script".
+3. Select "Create a new script...".
 
 4. Copy and paste the following code into the editor:
 
 ```javascript
 // ==UserScript==
 // @name         LTU-AutoLogin
-// @namespace    http://tampermonkey.net/
-// @version      0.1
-// @description  A very simple script for the lazy to click the login button when connecting to a site where CAS is used (Such as canvas).
+// @description  Automatically fills and clicks the button to quickly log-in from the LTU weblogon site.
+// @version 1.0
 // @match        https://weblogon.ltu.se/*
-// @grant        none
 // ==/UserScript==
 
 (function() {
     'use strict';
 
-    document.getElementById("username").value = "[your-username]";
-    document.getElementById("password").value = "[your-password]";
+    document.getElementById("username").value = "USERNAME_HERE";
+    document.getElementById("password").value = "PASSWORD_HERE";
 
     document.getElementsByClassName("btn-submit")[0].click();
 })();
+```
+5. Put your username between the quotes where it says USERNAME_HERE, and put your password where it says PASSWORD_HERE
+   
+6. Click File, Save. And Done.
