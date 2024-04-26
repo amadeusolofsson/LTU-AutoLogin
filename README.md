@@ -32,6 +32,6 @@ A very simple script for the lazy to click the login button when connecting to a
     document.getElementsByClassName("btn-submit")[0].click();
 })();
 ```
-5. Put your username between the quotes where it says USERNAME_HERE, and put your password where it says PASSWORD_HERE
+5. Put your username between the quotes where it says USERNAME_HERE, and put your password where it says PASSWORD_HERE.
    
 6. Click File, Save. And Done.
