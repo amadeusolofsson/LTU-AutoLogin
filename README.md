@@ -16,20 +16,44 @@ A very simple script for the lazy to click the login button when connecting to a
 
 ```javascript
 // ==UserScript==
-// @name         LTU-AutoLogin
-// @description  Automatically fills and clicks the button to quickly log-in from the LTU weblogon site.
-// @version      1.0
-// @author       sleepy
+// @name         LTU-AutoLogin (WebLogon and Canvas)
+// @description  Automatically logs in on both LTU WebLogon and Canvas sites
+// @author       Amadeus Olofsson
 // @match        https://weblogon.ltu.se/*
+// @match        https://idp.ltu.se/*
 // ==/UserScript==
 
 (function() {
     'use strict';
 
-    document.getElementById("username").value = "USERNAME_HERE";
-    document.getElementById("password").value = "PASSWORD_HERE";
+    const USERNAME = "USERNAME_HERE";
+    const PASSWORD = "PASSWORD_HERE";
 
-    document.getElementsByClassName("btn-submit")[0].click();
+    // WebLogon
+    function autoLoginWebLogon() {
+        document.getElementById("username").value = USERNAME;
+        document.getElementById("password").value = PASSWORD;
+        document.getElementsByClassName("btn-submit")[0].click();
+    }
+
+    // Canvas
+    function autoLoginCanvas() {
+        document.getElementById('username').value = USERNAME;
+        document.getElementById('password').value = PASSWORD;
+        document.querySelector('button[name="_eventId_proceed"]').click();
+    }
+
+    // 
+    function runAutoLogin() {
+        if (window.location.hostname === "weblogon.ltu.se") {
+            autoLoginWebLogon();
+        } else if (window.location.hostname === "idp.ltu.se") {
+            autoLoginCanvas();
+        }
+    }
+
+    // Run the appropriate login function when the page is fully loaded
+    window.addEventListener('load', runAutoLogin);
 })();
 ```
 5. Put your username between the quotes where it says USERNAME_HERE, and put your password where it says PASSWORD_HERE.
