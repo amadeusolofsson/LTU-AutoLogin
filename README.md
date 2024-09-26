@@ -26,8 +26,8 @@ A very simple script for the lazy to click the login button when connecting to a
 (function() {
     'use strict';
 
-    const USERNAME = "USERNAME_HERE";
-    const PASSWORD = "PASSWORD_HERE";
+    const USERNAME = "Your username here";
+    const PASSWORD = "Your password here";
 
     // WebLogon
     function autoLoginWebLogon() {
@@ -42,8 +42,7 @@ A very simple script for the lazy to click the login button when connecting to a
         document.getElementById('password').value = PASSWORD;
         document.querySelector('button[name="_eventId_proceed"]').click();
     }
-
-    // 
+    
     function runAutoLogin() {
         if (window.location.hostname === "weblogon.ltu.se") {
             autoLoginWebLogon();
