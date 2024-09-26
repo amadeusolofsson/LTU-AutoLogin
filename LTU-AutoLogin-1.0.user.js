@@ -25,8 +25,7 @@
         document.getElementById('password').value = PASSWORD;
         document.querySelector('button[name="_eventId_proceed"]').click();
     }
-
-    // 
+    
     function runAutoLogin() {
         if (window.location.hostname === "weblogon.ltu.se") {
             autoLoginWebLogon();
