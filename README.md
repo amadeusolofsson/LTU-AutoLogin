@@ -14,7 +14,7 @@ A very simple script for the lazy to click the login button when connecting to a
 
 4. Copy and paste the following code into the editor:
 
-https://github.com/amadeusolofsson/LTU-AutoLogin/blob/2174b8654325c0bdf4b66dbd4123682ea99a2004/LTU-AutoLogin-1.0.user.js#L1-L6
+https://github.com/amadeusolofsson/LTU-AutoLogin/blob/main/LTU-AutoLogin-1.0.user.js
 
 5. Put your username between the quotes where it says "Your username here", and put your password where it says "Your password here".
    
