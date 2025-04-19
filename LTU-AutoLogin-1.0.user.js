@@ -8,11 +8,12 @@
 // @match        https://idp.ltu.se/*
 // @match        https://www.student.ladok.se/*
 // @match        https://service.seamlessaccess.org/*
+// @match        https://ltu.inspera.com/*
 // ==/UserScript==
 
 (function() {
-    const USERNAME = "Your USERNAME here";
-    const PASSWORD = "Your PASSOWRD here";
+    const USERNAME = "YOUR USERNAME HERE";
+    const PASSWORD = "YOUR PASSWORD HERE";
 
     // WebLogon
     function autoLoginWebLogon() {
@@ -56,16 +57,27 @@
         }
     }
 
+    // Inspera
+    function autoLoginInspera() {
+        const loginButton = document.getElementById('loginButton_Ladok');
+        if (loginButton) {
+            loginButton.click();
+        }
+    }
+
     // Check for current site and run function
     function runAutoLogin() {
-        if (window.location.hostname === "weblogon.ltu.se") {
+        const hostname = window.location.hostname;
+        if (hostname === "weblogon.ltu.se") {
             autoLoginWebLogon();
-        } else if (window.location.hostname === "idp.ltu.se") {
+        } else if (hostname === "idp.ltu.se") {
             autoLoginCanvas();
-        } else if (window.location.hostname.includes("ladok.se")) {
+        } else if (hostname.includes("ladok.se")) {
             autoLoginLadok();
-        } else if (window.location.hostname.includes("seamlessaccess.org")) {
+        } else if (hostname.includes("seamlessaccess.org")) {
             autoSelectSeamlessAccess();
+        } else if (hostname === "ltu.inspera.com") {
+            autoLoginInspera();
         }
     }
 
